@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ShopService.Model.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ShopService.Model.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfbillDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="billDTO" nillable="true" type="tns:billDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfbillDTO" nillable="true" type="tns:ArrayOfbillDTO" />
+  <xs:complexType name="billDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idBill" type="xs:int" />
+      <xs:element minOccurs="0" name="phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="total" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="billDTO" nillable="true" type="tns:billDTO" />
+  <xs:complexType name="ArrayOfDetailBillDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DetailBillDTO" nillable="true" type="tns:DetailBillDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDetailBillDTO" nillable="true" type="tns:ArrayOfDetailBillDTO" />
+  <xs:complexType name="DetailBillDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="amount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="idBill" type="xs:int" />
+      <xs:element minOccurs="0" name="idProduct" type="xs:int" />
+      <xs:element minOccurs="0" name="nameProduct" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="price" type="xs:int" />
+      <xs:element minOccurs="0" name="total" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DetailBillDTO" nillable="true" type="tns:DetailBillDTO" />
+</xs:schema>

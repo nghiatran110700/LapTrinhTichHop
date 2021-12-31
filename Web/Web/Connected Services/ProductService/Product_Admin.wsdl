@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Product_Admin" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/ShopService.Model.DTO" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/ShopService.Model.Entity" />
+      <xs:element name="list_Pro">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="list_ProResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ShopService.Model.DTO" minOccurs="0" name="list_ProResult" nillable="true" type="q1:ArrayOfProductDTO" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="add_pro">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ShopService.Model.Entity" minOccurs="0" name="pro" nillable="true" type="q2:Product" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="add_proResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="update_pro">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ShopService.Model.Entity" minOccurs="0" name="pro" nillable="true" type="q3:Product" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="update_proResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="delete_pro">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="id" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="delete_proResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="search_pro">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="search_proResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ShopService.Model.DTO" minOccurs="0" name="search_proResult" nillable="true" type="q4:ArrayOfProductDTO" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="findById">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="id" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="findByIdResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ShopService.Model.Entity" minOccurs="0" name="findByIdResult" nillable="true" type="q5:Product" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="List_cate">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="id" nillable="true" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="List_cateResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ShopService.Model.DTO" minOccurs="0" name="List_cateResult" nillable="true" type="q6:ArrayOfProductDTO" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ShopService.Model.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ShopService.Model.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ArrayOfProductDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductDTO" nillable="true" type="tns:ProductDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfProductDTO" nillable="true" type="tns:ArrayOfProductDTO" />
+      <xs:complexType name="ProductDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="amuont" type="xs:int" />
+          <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="idCategory" type="xs:int" />
+          <xs:element minOccurs="0" name="idProduct" type="xs:int" />
+          <xs:element minOccurs="0" name="nameCategory" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="nameProduct" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="photo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="price" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ProductDTO" nillable="true" type="tns:ProductDTO" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ShopService.Model.Entity" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ShopService.Model.Entity" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="Product">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="amuont" type="xs:int" />
+          <xs:element minOccurs="0" name="billDetails" nillable="true" type="tns:ArrayOfbillDetail" />
+          <xs:element minOccurs="0" name="category" nillable="true" type="tns:category" />
+          <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="idCategory" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="idProduct" type="xs:int" />
+          <xs:element minOccurs="0" name="nameProduct" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="photo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="price" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Product" nillable="true" type="tns:Product" />
+      <xs:complexType name="ArrayOfbillDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="billDetail" nillable="true" type="tns:billDetail" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfbillDetail" nillable="true" type="tns:ArrayOfbillDetail" />
+      <xs:complexType name="billDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Product" nillable="true" type="tns:Product" />
+          <xs:element minOccurs="0" name="amount" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="bill" nillable="true" type="tns:bill" />
+          <xs:element minOccurs="0" name="id" type="xs:int" />
+          <xs:element minOccurs="0" name="idBill" type="xs:int" />
+          <xs:element minOccurs="0" name="idProduct" type="xs:int" />
+          <xs:element minOccurs="0" name="total" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="billDetail" nillable="true" type="tns:billDetail" />
+      <xs:complexType name="bill">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="billDetails" nillable="true" type="tns:ArrayOfbillDetail" />
+          <xs:element minOccurs="0" name="idBill" type="xs:int" />
+          <xs:element minOccurs="0" name="phone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="status" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="total_bill" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="bill" nillable="true" type="tns:bill" />
+      <xs:complexType name="category">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Products" nillable="true" type="tns:ArrayOfProduct" />
+          <xs:element minOccurs="0" name="idCategory" type="xs:int" />
+          <xs:element minOccurs="0" name="nameCategory" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="category" nillable="true" type="tns:category" />
+      <xs:complexType name="ArrayOfProduct">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Product" nillable="true" type="tns:Product" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfProduct" nillable="true" type="tns:ArrayOfProduct" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="IProduct_Admin_list_Pro_InputMessage">
+    <wsdl:part name="parameters" element="tns:list_Pro" />
+  </wsdl:message>
+  <wsdl:message name="IProduct_Admin_list_Pro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:list_ProResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProduct_Admin_add_pro_InputMessage">
+    <wsdl:part name="parameters" element="tns:add_pro" />
+  </wsdl:message>
+  <wsdl:message name="IProduct_Admin_add_pro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:add_proResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProduct_Admin_update_pro_InputMessage">
+    <wsdl:part name="parameters" element="tns:update_pro" />
+  </wsdl:message>
+  <wsdl:message name="IProduct_Admin_update_pro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:update_proResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProduct_Admin_delete_pro_InputMessage">
+    <wsdl:part name="parameters" element="tns:delete_pro" />
+  </wsdl:message>
+  <wsdl:message name="IProduct_Admin_delete_pro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:delete_proResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProduct_Admin_search_pro_InputMessage">
+    <wsdl:part name="parameters" element="tns:search_pro" />
+  </wsdl:message>
+  <wsdl:message name="IProduct_Admin_search_pro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:search_proResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProduct_Admin_findById_InputMessage">
+    <wsdl:part name="parameters" element="tns:findById" />
+  </wsdl:message>
+  <wsdl:message name="IProduct_Admin_findById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:findByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProduct_Admin_List_cate_InputMessage">
+    <wsdl:part name="parameters" element="tns:List_cate" />
+  </wsdl:message>
+  <wsdl:message name="IProduct_Admin_List_cate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:List_cateResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IProduct_Admin">
+    <wsdl:operation name="list_Pro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProduct_Admin/list_Pro" message="tns:IProduct_Admin_list_Pro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProduct_Admin/list_ProResponse" message="tns:IProduct_Admin_list_Pro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="add_pro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProduct_Admin/add_pro" message="tns:IProduct_Admin_add_pro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProduct_Admin/add_proResponse" message="tns:IProduct_Admin_add_pro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="update_pro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProduct_Admin/update_pro" message="tns:IProduct_Admin_update_pro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProduct_Admin/update_proResponse" message="tns:IProduct_Admin_update_pro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="delete_pro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProduct_Admin/delete_pro" message="tns:IProduct_Admin_delete_pro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProduct_Admin/delete_proResponse" message="tns:IProduct_Admin_delete_pro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="search_pro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProduct_Admin/search_pro" message="tns:IProduct_Admin_search_pro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProduct_Admin/search_proResponse" message="tns:IProduct_Admin_search_pro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="findById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProduct_Admin/findById" message="tns:IProduct_Admin_findById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProduct_Admin/findByIdResponse" message="tns:IProduct_Admin_findById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="List_cate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProduct_Admin/List_cate" message="tns:IProduct_Admin_List_cate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProduct_Admin/List_cateResponse" message="tns:IProduct_Admin_List_cate_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IProduct_Admin" type="tns:IProduct_Admin">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="list_Pro">
+      <soap:operation soapAction="http://tempuri.org/IProduct_Admin/list_Pro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="add_pro">
+      <soap:operation soapAction="http://tempuri.org/IProduct_Admin/add_pro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update_pro">
+      <soap:operation soapAction="http://tempuri.org/IProduct_Admin/update_pro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete_pro">
+      <soap:operation soapAction="http://tempuri.org/IProduct_Admin/delete_pro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="search_pro">
+      <soap:operation soapAction="http://tempuri.org/IProduct_Admin/search_pro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findById">
+      <soap:operation soapAction="http://tempuri.org/IProduct_Admin/findById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List_cate">
+      <soap:operation soapAction="http://tempuri.org/IProduct_Admin/List_cate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Product_Admin">
+    <wsdl:port name="BasicHttpBinding_IProduct_Admin" binding="tns:BasicHttpBinding_IProduct_Admin">
+      <soap:address location="http://localhost:62517/Service/Admin/pro/Product_Admin.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

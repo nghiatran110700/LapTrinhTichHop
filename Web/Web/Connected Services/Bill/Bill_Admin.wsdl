@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Bill_Admin" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:62517/Service/Admin/BILL/Bill_Admin.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:62517/Service/Admin/BILL/Bill_Admin.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:62517/Service/Admin/BILL/Bill_Admin.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ShopService.Model.DTO" />
+      <xsd:import schemaLocation="http://localhost:62517/Service/Admin/BILL/Bill_Admin.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/ShopService.Model.Entity" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IBill_Admin_list_bill_InputMessage">
+    <wsdl:part name="parameters" element="tns:list_bill" />
+  </wsdl:message>
+  <wsdl:message name="IBill_Admin_list_bill_OutputMessage">
+    <wsdl:part name="parameters" element="tns:list_billResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBill_Admin_add_bill_InputMessage">
+    <wsdl:part name="parameters" element="tns:add_bill" />
+  </wsdl:message>
+  <wsdl:message name="IBill_Admin_add_bill_OutputMessage">
+    <wsdl:part name="parameters" element="tns:add_billResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBill_Admin_add_billDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:add_billDetail" />
+  </wsdl:message>
+  <wsdl:message name="IBill_Admin_add_billDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:add_billDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBill_Admin_DetailBill_InputMessage">
+    <wsdl:part name="parameters" element="tns:DetailBill" />
+  </wsdl:message>
+  <wsdl:message name="IBill_Admin_DetailBill_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DetailBillResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBill_Admin_top_InputMessage">
+    <wsdl:part name="parameters" element="tns:top" />
+  </wsdl:message>
+  <wsdl:message name="IBill_Admin_top_OutputMessage">
+    <wsdl:part name="parameters" element="tns:topResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBill_Admin_deleteBill_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteBill" />
+  </wsdl:message>
+  <wsdl:message name="IBill_Admin_deleteBill_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteBillResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBill_Admin_test_InputMessage">
+    <wsdl:part name="parameters" element="tns:test" />
+  </wsdl:message>
+  <wsdl:message name="IBill_Admin_test_OutputMessage">
+    <wsdl:part name="parameters" element="tns:testResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IBill_Admin">
+    <wsdl:operation name="list_bill">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBill_Admin/list_bill" message="tns:IBill_Admin_list_bill_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBill_Admin/list_billResponse" message="tns:IBill_Admin_list_bill_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="add_bill">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBill_Admin/add_bill" message="tns:IBill_Admin_add_bill_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBill_Admin/add_billResponse" message="tns:IBill_Admin_add_bill_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="add_billDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBill_Admin/add_billDetail" message="tns:IBill_Admin_add_billDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBill_Admin/add_billDetailResponse" message="tns:IBill_Admin_add_billDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DetailBill">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBill_Admin/DetailBill" message="tns:IBill_Admin_DetailBill_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBill_Admin/DetailBillResponse" message="tns:IBill_Admin_DetailBill_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="top">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBill_Admin/top" message="tns:IBill_Admin_top_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBill_Admin/topResponse" message="tns:IBill_Admin_top_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteBill">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBill_Admin/deleteBill" message="tns:IBill_Admin_deleteBill_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBill_Admin/deleteBillResponse" message="tns:IBill_Admin_deleteBill_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="test">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBill_Admin/test" message="tns:IBill_Admin_test_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBill_Admin/testResponse" message="tns:IBill_Admin_test_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IBill_Admin" type="tns:IBill_Admin">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="list_bill">
+      <soap:operation soapAction="http://tempuri.org/IBill_Admin/list_bill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="add_bill">
+      <soap:operation soapAction="http://tempuri.org/IBill_Admin/add_bill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="add_billDetail">
+      <soap:operation soapAction="http://tempuri.org/IBill_Admin/add_billDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DetailBill">
+      <soap:operation soapAction="http://tempuri.org/IBill_Admin/DetailBill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="top">
+      <soap:operation soapAction="http://tempuri.org/IBill_Admin/top" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteBill">
+      <soap:operation soapAction="http://tempuri.org/IBill_Admin/deleteBill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="test">
+      <soap:operation soapAction="http://tempuri.org/IBill_Admin/test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Bill_Admin">
+    <wsdl:port name="BasicHttpBinding_IBill_Admin" binding="tns:BasicHttpBinding_IBill_Admin">
+      <soap:address location="http://localhost:62517/Service/Admin/BILL/Bill_Admin.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
